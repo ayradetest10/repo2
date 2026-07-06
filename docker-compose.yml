@@ -5,4 +5,4 @@ services:
     ports:
       - "80:80"
     volumes:
-      - /home/repo2:/usr/share/nginx/htm
+      - /home/repo2:/usr/share/nginx/html
