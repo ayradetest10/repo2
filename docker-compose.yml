@@ -1,0 +1,8 @@
+services:
+  nginx:
+    build: .
+    container_name: nginx-node03
+    ports:
+      - "80:80"
+    volumes:
+      - /home/repo2:/usr/share/nginx/htm
