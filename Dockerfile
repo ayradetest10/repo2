@@ -1,3 +1,11 @@
-FROM nginx:latest
+FROM python:3.12-slim
 
-COPY default.conf /etc/nginx/conf.d/default.conf
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY app.py .
+COPY templates ./templates
+
+CMD ["flask", "--app", "app", "--debug", "run", "--host=0.0.0.0", "--port=5000"]
